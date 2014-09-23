@@ -1,5 +1,6 @@
 var print_e = function(e) {
     //console.log(e.type, e, 'touches', e.touches.length, e.touches, 'changedTouches', e.changedTouches.length, e.changedTouches);
+    console.log(e);
 };
 
 document.addEventListener('touchstart', print_e, false);
