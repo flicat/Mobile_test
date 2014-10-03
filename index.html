@@ -3,76 +3,364 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=false">
-    <title>网游专区</title>
-    <link rel="shortcut icon" href="favicon.ico"/>
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        var random = Math.floor(Math.random() * 1E10);
-        document.write('<link rel="stylesheet" href="css/default.css?' + random + '"/>');
-        document.write('<scr' + 'ipt type="text/javascript" defer="" src="js/default.js?' + random + '"></sc' + 'ript>')
-    </script>
+    <title>秦时明月</title>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/default.css"/>
 </head>
-<body class="container">
-<header class="header">
-    <hgroup class="text-center">
-        <h1>HTML5中的新元素</h1>
-        <h2>HTML5触摸事件</h2>
-    </hgroup>
-</header>
-<article class="col-lg-8">
-    <p> HTML5中新添加了很多事件，但是由于他们的兼容问题不是很理想，应用实战性不是太强，所以在这里基本省略，咱们只分享应用广泛兼容不错的事件，日后随着兼容情况提升以后再陆续添加分享。今天为大家介绍的事件主要是触摸事件：touchstart、touchmove和touchend。</p>
-
-    <p>一开始触摸事件touchstart、touchmove和touchend是iOs版Safari浏览器为了向开发人员传达一些信息新添加的事件。因为iOs设备既没有鼠标也没有键盘，所以在为移动Safari浏览器开发交互性网页的时候，PC端的鼠标和键盘事件是不够用的。
-
-    <p>在iPhone 3Gs发布的时候，其自带的移动Safari浏览器就提供了一些与触摸(touch)操作相关的新事件。随后，Android上的浏览器也实现了相同的事件。触摸事件(touch)会在用户手指放在屏幕上面的时候、在屏幕上滑动的时候或者是从屏幕上移开的时候出发。下面具体说明：
-
-
-    <p>touchstart 事件：当手指触摸屏幕时候触发，即使已经有一个手指放在屏幕上也会触发。
-
-    <p>touchmove 事件：当手指在屏幕上滑动的时候连续地触发。在这个事件发生期间，调用preventDefault()事件可以阻止滚动。
-
-    <p>touchend 事件：当手指从屏幕上离开的时候触发。
-
-    <p>touchcancel 事件：当系统停止跟踪触摸的时候触发。关于这个事件的确切出发时间，文档中并没有具体说明，咱们只能去猜测了。
-
-
-    <p>上面的这些事件都会冒泡，也都可以取消。虽然这些触摸事件没有在DOM规范中定义，但是它们却是以兼容DOM的方式实现的。所以，每个触摸事件的event对象都提供了在鼠标实践中常见的属性：bubbles(起泡事件的类型)、cancelable(是否用 preventDefault() 方法可以取消与事件关联的默认动作)、clientX(返回当事件被触发时，鼠标指针的水平坐标)、clientY(返回当事件触发时，鼠标指针的垂直坐标)、screenX(当某个事件被触发时，鼠标指针的水平坐标)和screenY(返回当某个事件被触发时，鼠标指针的垂直坐标)。除了常见的DOM属性，触摸事件还包含下面三个用于跟踪触摸的属性。
-
-
-    <p>touches：表示当前跟踪的触摸操作的touch对象的数组。
-
-    <p>targetTouches：特定于事件目标的Touch对象的数组。
-
-    <p>changeTouches：表示自上次触摸以来发生了什么改变的Touch对象的数组。
-
-
-    <p>每个Touch对象包含的属性如下。
-
-
-    <p>clientX：触摸目标在视口中的x坐标。
-
-    <p>clientY：触摸目标在视口中的y坐标。
-
-    <p>identifier：标识触摸的唯一ID。
-
-    <p>pageX：触摸目标在页面中的x坐标。
-
-    <p>pageY：触摸目标在页面中的y坐标。
-
-    <p>screenX：触摸目标在屏幕中的x坐标。
-
-    <p>screenY：触摸目标在屏幕中的y坐标。
-
-    <p>target：触目的DOM节点目标。
-</article>
-
-<footer class="col-lg-4">
-    <p>flicat.li</p>
-    <p>liyuelong1020@gmail.com</p>
-    <p>13422295536</p>
-</footer>
+<body>
+    <header class="header">
+        <h1 class="top-title">详情</h1>
+        <div class="top-widget clearfix">
+            <a href="#" class="top-back"><i class="icon icon-back">返回</i></a>
+            <a href="#" class="top-menu"><i class="icon icon-menu">菜单</i></a>
+            <a href="#" class="top-search"><i class="icon icon-search">搜索</i></a>
+        </div>
+    </header>
+    <section class="container">
+        <!--游戏介绍-->
+        <div class="content info">
+            <div class="game-info">
+                <div class="game-photo">
+                    <img src="image/logo.jpg" alt="秦时明月"/>
+                    <span class="game-star">
+                        <i class="icon icon-game-star"></i>
+                        <i class="icon icon-game-star"></i>
+                        <i class="icon icon-game-star"></i>
+                        <i class="icon icon-game-star"></i>
+                        <i class="icon icon-game-star"></i>
+                    </span>
+                </div>
+                <div class="game-details">
+                    <dl>
+                        <dt>秦时明月</dt>
+                        <dd>状态：公测</dd>
+                        <dd>类型：角色&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大小：123.00M</dd>
+                        <dd></dd>
+                        <dd>09-24版本更新至5.0</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="game-action">
+                <button class="btn btn-primary btn-game-down">下载</button>
+                <button class="btn btn-default btn-start-game">进入游戏</button>
+            </div>
+            <div class="notice">
+                <ul class="notice-list">
+                    <li class="notice-item">
+                        <i class="icon icon-notice"></i>
+                        <a href="#">《我叫MT》再开新服冲级送海量符石</a>
+                    </li>
+                    <li class="notice-item">
+                        <i class="icon icon-notice"></i>
+                        <a href="#">《我叫MT》再开新服冲级送海量符石</a>
+                    </li>
+                </ul>
+                <i class="icon icon-notice-transform"></i>
+            </div>
+        </div>
+        <!--截图简介-->
+        <div class="content screen-intro">
+            <div class="content-title">
+                <h3>截图<i class="icon-dot">•</i>简介</h3>
+                <i class="icon-collapse"></i>
+            </div>
+            <div class="print-screen" id="print-screen">
+                <ul class="screen-list clearfix">
+                    <li class="screen-item">
+                        <img src="image/screen_7.jpg" alt="截图"/>
+                    </li>
+                    <li class="screen-item">
+                        <img src="image/screen_8.jpg" alt="截图"/>
+                    </li>
+                    <li class="screen-item">
+                        <img src="image/screen_9.jpg" alt="截图"/>
+                    </li>
+                    <li class="screen-item">
+                        <img src="image/screen_10.jpg" alt="截图"/>
+                    </li>
+                    <li class="screen-item">
+                        <img src="image/screen_11.jpg" alt="截图"/>
+                    </li>
+                    <li class="screen-item">
+                        <img src="image/screen_12.jpg" alt="截图"/>
+                    </li>
+                </ul>
+            </div>
+            <nav class="other-menu">
+                <a href="#"><i class="icon icon-forum"></i>论坛</a>
+                <a href="#"><i class="icon icon-union"></i>工会</a>
+                <a href="#"><i class="icon icon-gift"></i>礼包</a>
+            </nav>
+            <p class="safe clearfix">
+                <span>安全信息：</span>
+                <span><i class="icon icon-warn"></i>含广告</span>
+                <span><i class="icon icon-success"></i>无病毒</span>
+                <span><i class="icon icon-success"></i>无暗扣</span>
+                <a href="#" class="more"><i class="icon icon-radius-collapse"></i></a>
+            </p>
+            <p class="info">简介：《王国保卫战：前线》拥有精美细腻的游戏画面、具有深度的战斗设定，还有多种英雄……</p>
+            <p class="pull-right">
+                <button class="btn btn-default btn-more">展开</button>
+            </p>
+        </div>
+        <!--礼包论坛-->
+        <div class="content gift-forum">
+            <div class="content-title">
+                <h3>礼包<i class="icon-dot">•</i>论坛</h3>
+                <i class="icon-collapse"></i>
+            </div>
+             <div class="gift">
+                 <h4 class="article-title">
+                     <span>礼包</span>
+                     <i class="icon-arrows-small"></i>
+                 </h4>
+                 <ul class="article-list">
+                     <li class="article-item">
+                         一代天骄新服礼包<button class="btn btn-primary btn-game-down">进入</button>
+                     </li>
+                     <li class="article-item">
+                         一代天骄新服礼包<button class="btn btn-primary btn-game-down">进入</button>
+                     </li>
+                     <li class="article-item">
+                         一代天骄新服礼包<button class="btn btn-primary btn-game-down">进入</button>
+                     </li>
+                 </ul>
+                 <a class="btn-article-more" href="#">更多礼包 <i class="icon icon-more"></i></a>
+             </div>
+            <div class="forum">
+                <h4 class="article-title">
+                    <span>热帖</span>
+                    <i class="icon-arrows-small"></i>
+                </h4>
+                <ul class="article-list">
+                    <li class="article-item">
+                        <i class="icon-dot">•</i><span class="type">新服</span>《YY水浒》14日新服享至尊待遇
+                    </li>
+                    <li class="article-item">
+                        <i class="icon-dot">•</i><span class="type">新服</span>《YY水浒》14日新服享至尊待遇
+                    </li>
+                    <li class="article-item">
+                        <i class="icon-dot">•</i><span class="type">新服</span>《YY水浒》14日新服享至尊待遇
+                    </li>
+                </ul>
+                <a class="btn-article-more" href="#">更多热帖<i class="icon icon-more"></i></a>
+            </div>
+        </div>
+        <!--活动新闻-->
+        <div class="content act-news">
+            <div class="content-title">
+                <h3>活动<i class="icon-dot">•</i>新闻</h3>
+                <i class="icon-collapse"></i>
+            </div>
+            <div class="act">
+                <h4 class="article-title">
+                    <span>活动</span>
+                    <i class="icon-arrows-small"></i>
+                </h4>
+                <ul class="article-list">
+                    <li class="article-item">
+                        <i class="icon-dot">•</i><span class="type">新服</span>《YY水浒》14日新服享至尊待遇
+                    </li>
+                    <li class="article-item">
+                        <i class="icon-dot">•</i><span class="type">新服</span>《YY水浒》14日新服享至尊待遇
+                    </li>
+                    <li class="article-item">
+                        <i class="icon-dot">•</i><span class="type">新服</span>《YY水浒》14日新服享至尊待遇
+                    </li>
+                </ul>
+                <a class="btn-article-more" href="#">更多活动<i class="icon icon-more"></i></a>
+            </div>
+            <div class="news">
+                <h4 class="article-title">
+                    <span>新闻</span>
+                    <i class="icon-arrows-small"></i>
+                </h4>
+                <ul class="article-list">
+                    <li class="article-item">
+                        <i class="icon-dot">•</i><span class="type">新服</span>《YY水浒》14日新服享至尊待遇
+                    </li>
+                    <li class="article-item">
+                        <i class="icon-dot">•</i><span class="type">新服</span>《YY水浒》14日新服享至尊待遇
+                    </li>
+                    <li class="article-item">
+                        <i class="icon-dot">•</i><span class="type">新服</span>《YY水浒》14日新服享至尊待遇
+                    </li>
+                </ul>
+                <a class="btn-article-more" href="#">更多新闻<i class="icon icon-more"></i></a>
+            </div>
+        </div>
+        <!--攻略指引-->
+        <div class="content strategy">
+            <div class="content-title">
+                <h3>攻略<i class="icon-dot">•</i>指引</h3>
+                <i class="icon-collapse"></i>
+            </div>
+            <div class="strategy">
+                <h4 class="article-title">
+                    <span>攻略</span>
+                    <i class="icon-arrows-small"></i>
+                </h4>
+                <div class="strategy-type">
+                    <p class="line">
+                        <a class="type-item" href="#">新手篇</a>
+                        <a class="type-item" href="#">任务篇</a>
+                        <a class="type-item" href="#">副本篇</a>
+                        <a class="type-item" href="#">职业篇</a>
+                    </p>
+                    <p class="line">
+                        <a class="type-item" href="#">新手篇</a>
+                        <a class="type-item" href="#">任务篇</a>
+                        <a class="type-item" href="#">副本篇</a>
+                        <a class="type-item" href="#">职业篇</a>
+                    </p>
+                </div>
+                <ul class="article-list">
+                    <li class="article-item">
+                        <i class="icon-dot">•</i><span class="type">新服</span>《YY水浒》14日新服享至尊待遇
+                    </li>
+                    <li class="article-item">
+                        <i class="icon-dot">•</i><span class="type">新服</span>《YY水浒》14日新服享至尊待遇
+                    </li>
+                    <li class="article-item">
+                        <i class="icon-dot">•</i><span class="type">新服</span>《YY水浒》14日新服享至尊待遇
+                    </li>
+                </ul>
+                <a class="btn-article-more" href="#">更多攻略<i class="icon icon-more"></i></a>
+            </div>
+            <div class="guide">
+                <h4 class="article-title">
+                    <span>指引</span>
+                    <i class="icon-arrows-small"></i>
+                </h4>
+                <div class="guide-list">
+                    <p class="line">
+                        <a href="#" class="guide-item">新手指引</a>
+                        <a href="#" class="guide-item">新手指引</a>
+                        <a href="#" class="guide-item">新手指引</a>
+                        <a href="#" class="guide-item">新手指引</a>
+                    </p>
+                    <p class="line">
+                        <a href="#" class="guide-item">新手指引</a>
+                        <a href="#" class="guide-item">新手指引</a>
+                        <a href="#" class="guide-item">新手指引</a>
+                        <a href="#" class="guide-item">新手指引</a>
+                    </p>
+                    <p class="line">
+                        <a href="#" class="guide-item">新手指引</a>
+                        <a href="#" class="guide-item">新手指引</a>
+                        <a href="#" class="guide-item">新手指引</a>
+                        <a href="#" class="guide-item">新手指引</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--评论评分-->
+        <div class="content comment">
+            <div class="content-title">
+                <h3>评论<i class="icon-dot">•</i>评分</h3>
+                <i class="icon-collapse"></i>
+            </div>
+            <p class="score"><span>平均评分: 4.3分</span><span>评分人数: 54187</span></p>
+            <div class="comment-input">
+                <label>
+                    <i class="icon icon-comment"></i>
+                    <input type="text" placeholder="写评论" name="comment" />
+                </label>
+            </div>
+            <ul class="comment-list">
+                <li class="comment-item">
+                    <p class="user-name">九游用户</p>
+                    <p class="comment-content">HTC完美通过！G10可以玩！给力！！</p>
+                    <p class="comment-info clearfix">
+                        <time>2013-9-25</time>
+                        <span class="source">来自<em>九游网页端</em></span>
+                        <span class="equipment">xiaomi 1s</span>
+                    </p>
+                    <div class="attitude">
+                        <a href="#" class="praise"><i class="icon icon-praise"></i><br>999</a>
+                        <a href="#" class="degrade"><i class="icon icon-degrade"></i><br>404</a>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <p class="user-name">九游用户</p>
+                    <p class="comment-content">出品模拟经营游戏，地产大亨主角们将在游戏中管EA出品模拟经营游戏，地产大亨主角们将在游戏中管</p>
+                    <p class="comment-info clearfix">
+                        <time>2013-9-25</time>
+                        <span class="source">来自<em>九游网页端</em></span>
+                        <span class="equipment">xiaomi 1s</span>
+                    </p>
+                    <a href="#" class="praise"><i class="icon icon-praise-visited"></i><br>999</a>
+                    <a href="#" class="degrade"><i class="icon icon-degrade-visited"></i><br>404</a>
+                </li>
+                <li class="comment-item">
+                    <p class="user-name">九游用户</p>
+                    <p class="comment-content">HTC完美通过！G10可以玩！给力！！</p>
+                    <p class="comment-info clearfix">
+                        <time>2013-9-25</time>
+                        <span class="source">来自<em>九游网页端</em></span>
+                        <span class="equipment">xiaomi 1s</span>
+                    </p>
+                    <div class="attitude">
+                        <a href="#" class="praise"><i class="icon icon-praise"></i><br>999</a>
+                        <a href="#" class="degrade"><i class="icon icon-degrade"></i><br>404</a>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <p class="user-name">九游用户</p>
+                    <p class="comment-content">HTC完美通过！G10可以玩！给力！！</p>
+                    <p class="comment-info clearfix">
+                        <time>2013-9-25</time>
+                        <span class="source">来自<em>九游网页端</em></span>
+                        <span class="equipment">xiaomi 1s</span>
+                    </p>
+                    <div class="attitude">
+                        <a href="#" class="praise"><i class="icon icon-praise"></i><br>999</a>
+                        <a href="#" class="degrade"><i class="icon icon-degrade"></i><br>404</a>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <p class="user-name">九游用户</p>
+                    <p class="comment-content">HTC完美通过！G10可以玩！给力！！</p>
+                    <p class="comment-info clearfix">
+                        <time>2013-9-25</time>
+                        <span class="source">来自<em>九游网页端</em></span>
+                        <span class="equipment">xiaomi 1s</span>
+                    </p>
+                    <div class="attitude">
+                        <a href="#" class="praise"><i class="icon icon-praise"></i><br>999</a>
+                        <a href="#" class="degrade"><i class="icon icon-degrade"></i><br>404</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="more-comment">
+                <a class="btn-article-more" href="#">查看更多</a>
+            </div>
+            <div class="comment-input">
+                <label>
+                    <i class="icon icon-comment"></i>
+                    <input type="text" placeholder="写评论" name="comment" />
+                </label>
+            </div>
+        </div>
+        <!--厂商客服-->
+        <div class="content contact">
+            <h3>厂商客服</h3>
+            <p>厂商: 广州市动景计算机科技有限公司</p>
+            <p>客服电话: 123456789</p>
+            <p>玩家QQ群: 123456789</p>
+        </div>
+    </section>
+    <footer class="footer">
+        <nav class="foot-nav">
+            <a href="#">关于</a>
+            <a href="#">客服</a>
+            <a href="#">论坛</a>
+            <a href="#">发号</a>
+            <a href="javascript:;" id="go-top">TOP<i class="icon icon-top"></i></a>
+        </nav>
+        <p class="copyright">粤ICP备09210879号-5</p>
+    </footer>
+    <script type="text/javascript" src="js/scroll.js"></script>
+    <script type="text/javascript" src="js/default.js"></script>
 </body>
-
 </html>
