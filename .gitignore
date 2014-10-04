@@ -1,0 +1,5 @@
+*.psd
+.git/
+.idea/
+node_modules/
+.gitignore
