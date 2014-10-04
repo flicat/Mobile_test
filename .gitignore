@@ -2,4 +2,6 @@
 .git/
 .idea/
 node_modules/
-.gitignore
+image/images/
+id_rsa
+id_rsa.pub
