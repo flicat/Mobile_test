@@ -13,12 +13,12 @@
         this.wrap = element;                                // 外层节点
         this.ul = element.querySelector('ul');              // 列表ul
         this.items = this.ul ? this.ul.children : [];       // 列表项
-        this.itemWidth = 0;
-        this.listWidth = 0;
-        this.wrapWidth = 0;
+        this.itemWidth = 0;                                 // 列表项宽度
+        this.listWidth = 0;                                 // 列表总宽度
+        this.wrapWidth = 0;                                 // 容器宽度
         this.option = toString(option) === '[object Object]' ? option : {}; // 配置参数
-        this.scrollFlag = false;
-        this.items.length && this.init();
+        this.scrollFlag = false;                            // 是否开始触摸滚动
+        this.items.length && this.init();                   // 如果列表不为空则初始化触摸事件
     };
 
     Scroll.prototype = {
@@ -36,14 +36,14 @@
 
             var that = this;
             var point = that.touchPoint;
-            var ePoint = e.touches && e.touches.length ? e.touches[0] : e;
+            var ePoint = e.touches && e.touches.length ? e.touches[0] : e;             // 是否是触摸事件
             var style = that.ul.style;
 
             switch(e.type) {
                 case 'mousedown':
                 case 'touchstart':
                     that.scrollFlag = true;
-                    // 过渡的持续时间
+                    // 过渡效果的持续时间
                     that.ul.style.webkitTransitionDuration =
                         that.ul.style.MozTransitionDuration =
                             that.ul.style.transitionDuration =
@@ -57,7 +57,7 @@
                 case 'touchmove':
                     if(that.scrollFlag){
                         point.end = ePoint.clientX;
-                        that.move(point.end - point.start + point.transitionDiff);
+                        that.move(point.end - point.start + point.transitionDiff);     // 跟随触摸点滚动
                     }
                     break;
                 case 'mouseup':
@@ -74,6 +74,7 @@
                                         that.progress.style.MozTransitionDuration =
                                             that.progress.style.transitionDuration = '0.3s';
 
+                        // 停止触摸后定位到图片列表
                         point.transitionDiff = point.end - point.start + point.transitionDiff;
 
                         if(point.transitionDiff > 0){
